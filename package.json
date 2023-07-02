@@ -1,0 +1,26 @@
+{
+  "name": "mlbb_api",
+  "version": "1.0.0",
+  "description": "Api mobile legends game",
+  "main": "index.js",
+  "type":"module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Nodejs",
+    "Api",
+    "Express",
+    "Sequelize",
+    "backend"
+  ],
+  "author": "Miguel Modesto",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "helmet": "^7.0.0",
+    "npm": "^9.7.2"
+  }
+}
