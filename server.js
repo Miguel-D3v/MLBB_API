@@ -1,7 +1,10 @@
 import express from "express";
 import db from "./src/config/database.js";
 import app from "./src/app.js";
+import dotenv from "dotenv/config.js";
 
-db.sync(() => console.log(`Banco de dados conectado`));
+const PORT = process.env.PORT;
 
-app.listen(3000, () => console.log("Servidor iniciado na porta 3000"));
+db.sync(() => console.log(`connected database`));
+
+app.listen(PORT, () => console.log("server started"));

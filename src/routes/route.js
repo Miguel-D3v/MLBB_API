@@ -4,6 +4,11 @@ import modelHero from "../models/modelHero.js";
 
 const routes = express.Router();
 
+routes.get("/",(req,res) =>{
+   res.json({message : "Api mobile legend"})
+})
+
+
 // Listar todos os herois
 
 routes.get("/heroes",async(req,res,next) => {
