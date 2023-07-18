@@ -19,8 +19,9 @@ Nela haverá informações sobre os heróis do game e seus avatares .
 
 API → https://apiMLBB.com/
 
-| Exibe todos os heróis  |  /heroes |
+|  |  | 
 | --- | --- |
+| Exibe todos os heróis | /heroes |
 | Filtra heróis por nome | /heroes/{name} |
 | Retorna o herói pelo id | /{id} |
 | Retorna os heróis pela função  | /roles/{role} |
