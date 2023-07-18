@@ -1,7 +1,7 @@
 # Documentação API Mobile Legends
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTX_MD6c0tRfY6lUW34ld0ZSjbGdPN9ZqI8ZiU7Pwds1HLORHoC2-fh3Kne&s=10 " width="500px" />
 
-# Tecnologias utilizadas
+# Tecnologias 
 
 - Nodejs
 - Express
