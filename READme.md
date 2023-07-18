@@ -10,8 +10,8 @@
 
 # Visão Geral
 
-Disponibilizada em 18 de julho de 2023 
-Essa API foi criada com o objetivo de facilitar para programadores com qualquer linguagem de programação testar a aplicação que está sendo construída. Essa API também se destina a você que ainda está em fase de aprendizado e precisa de uma API que possa ser acessada gratuitamente.
+Disponibilizada em 18 de julho de 2023  <br>
+Essa API foi criada com o objetivo de facilitar para programadores com qualquer linguagem de programação testar a aplicação que está sendo construída. <br> Essa API também se destina a você que ainda está em fase de aprendizado e precisa de uma API que possa ser acessada gratuitamente.
 Nela haverá informações sobre os heróis do game e seus avatares .
 
 # Endpoints
