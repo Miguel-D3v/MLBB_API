@@ -9,11 +9,18 @@ routes.get("/",(req,res) =>{
 })
 
 
-// Listar todos os herois
-
 routes.get("/heroes",async(req,res,next) => {
    try{
-   const result = await modelHero.findAll();
+    const offset = req.query.offset || 0;
+    const limit = req.query.limit || 10;
+
+    const offsetInt = parseInt(offset, 10);
+    const limitInt = parseInt(limit, 10);
+
+   const result = await modelHero.findAll({
+      offset: offsetInt,
+      limit: limitInt,
+   });
    res.json({
        "message":"Sucessfuly",
        "heroes": result
@@ -26,7 +33,6 @@ routes.get("/heroes",async(req,res,next) => {
 });
 
 
-// Buscar heroi cujo nome igual a endpoint
 
 routes.get("/heroes/:name",async(req,res,next) => {
      try{
@@ -46,7 +52,6 @@ routes.get("/heroes/:name",async(req,res,next) => {
   }
 });
 
-// Buscar heroi pelo id
 
 routes.get("/:id",async(req,res,next) => {
     try{
@@ -66,7 +71,6 @@ routes.get("/:id",async(req,res,next) => {
    }
 });
 
-// Buscar heroi por funcao(role)
 
 routes.get("/roles/:role",async(req,res,next) => {
    try{

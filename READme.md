@@ -20,7 +20,8 @@ API → https://mlbb-api.vercel.app/
 
 |  |  | 
 | --- | --- |
-| Exibe todos os heróis | /heroes |
+| Exibe os 10 primeiros herois | /heroes |
+| Retorna 10 herois a partir do décimo | /heroes/?offset=10&limit=10 |
 | Filtra heróis por nome | /heroes/{name} |
 | Retorna o herói pelo id | /{id} |
 | Retorna os heróis pela função  | /roles/{role} |
