@@ -17,7 +17,7 @@ Nela haverá informações sobre os heróis do game e seus avatares .
 # Endpoints
 
 API → https://mlbb-api.vercel.app/
-Documentation → https://mlbb-api.vercel.app/v1/docs
+
 
 |  |  | 
 | --- | --- |
