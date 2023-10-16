@@ -39,9 +39,9 @@ routes.get("/heroes/:name",async(req,res,next) => {
     const heroName = await modelHero.findOne({ where:{ name:req.params.name }});
 
      if(heroName === null){
-      res.json("Heroi nao encontrado");
+      res.status(404).json("Hero not found");
      } else{
-    res.json({
+      res.json({
       "message":"Sucessfuly",
       "hero":heroName
    })}
@@ -58,9 +58,9 @@ routes.get("/:id",async(req,res,next) => {
     const hero = await modelHero.findByPk(req.params.id);
 
      if(hero === null){
-      res.json("Heroi nao encontrado tente outro id")
+      res.status(404).json("Hero not found try another id")
     }else{
-    res.json({
+      res.json({
      "message":"Sucessfuly",
      "hero": hero
     })}
@@ -76,9 +76,9 @@ routes.get("/roles/:role",async(req,res,next) => {
    try{
    const heroRole = await modelHero.findAll({ where:{ roles:req.params.role }});
     if(heroRole.length === 0){
-      res.json("Nenhum heroi encontrado para essa funcao")
+      res.status(404).json("No heroes found for this role")
     }else{
-   res.json({
+      res.json({
      "message":"Sucessfuly",
      "heroes": heroRole
    })}
