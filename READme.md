@@ -29,4 +29,4 @@ API → https://mlbb-api.vercel.app/
 
 ---
 
-Em caso de dúvidas ou erros reporte para o email : xmiguelxpeixotox@gmail.com
+
