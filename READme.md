@@ -56,4 +56,4 @@ API → https://mlbb-api.vercel.app/
   curl -X GET  https://mlbb-api.vercel.app/roles/Mage
   ```
 
-Em caso de dúvidas ou erros reporte para o email : xmiguelxpeixotox@gmail.com
+
