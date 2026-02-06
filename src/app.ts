@@ -1,5 +1,5 @@
 import express from "express";
-import routes from "./routes/route.js";
+import routes from "./routes/route";
 import cors from "cors";
 import helmet from "helmet";
 

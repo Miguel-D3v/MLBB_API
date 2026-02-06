@@ -1,7 +1,20 @@
-import db from "./src/config/database.js";
+import {sequelize} from "./src/database/connect.ts";
 import app from "./src/app.js";
 import { PORT } from './src/config/env'
 
-db.sync(() => console.log(`connected database`));
+async function startServer() {
+  try {
+    await sequelize.sync();
 
-app.listen(PORT, () => console.log("server started"));
+    console.log("Banco sincronizado");
+
+    app.listen(PORT, () => {
+      console.log(`Servidor rodando na porta ${PORT}`);
+    });
+
+  } catch (error) {
+    console.error("Erro ao iniciar:", error);
+  }
+}
+
+startServer()

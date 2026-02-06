@@ -1,5 +1,5 @@
 import express from "express";
-import modelHero from "../models/modelHero.js";
+import {Hero} from "../models/modelHero";
 
 
 const routes = express.Router();
