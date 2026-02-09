@@ -8,9 +8,15 @@ const app = express();
 app.use(cors());
 app.use(helmet());
 app.use(express.json());
-app.use(routes)
-app.use((error,req,res,next)=>{
-    res.status(error.httpStatusCode).json("Bad Request");
+app.use("/api",routes);
+app.use((error:any,req: express.Request,res: express.Response,next: express.NextFunction)=>{
+    const statusCode = error.httpStatusCode || 500;
+    const message = error.message || "Internal Server Error";
+
+    res.status(statusCode).json({
+        message: message,
+        error: process.env.NODE_ENV === "development" ? error : {}
+    });
  });
 
 
