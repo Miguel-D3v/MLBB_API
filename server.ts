@@ -1,5 +1,5 @@
-import {sequelize} from "./src/database/connect.ts";
-import app from "./src/app.ts";
+import {sequelize} from "./src/database/connect";
+import app from "./src/app";
 import { PORT } from './src/config/env'
 
 async function startServer() {

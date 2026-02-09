@@ -23,37 +23,37 @@ API → https://mlbb-api.vercel.app/
 - **Descrição:** Retorna os 10 primeiros heróis.
 - **Exemplo de uso:**
   ```bash
-  curl -X GET  https://mlbb-api.vercel.app/heroes
+  curl -X GET https://mlbb-api.vercel.app/heroes
   ```
 
-### /heroes/?offset=10&limit=10
+### /heroes?offset=10&limit=10
 - **Método:** GET
 - **Descrição:** Retorna 10 heróis a partir do décimo.
 - **Exemplo de uso:**
   ```bash
-  curl -X GET  https://mlbb-api.vercel.app/heroes/?offset=10&limit=10
+  curl -X GET "https://mlbb-api.vercel.app/heroes?offset=10&limit=10"
   ```
 ### /heroes/{name}
 - **Método:** GET
 - **Descrição:** Retorna o herói pelo nome.
 - **Exemplo de uso:**
   ```bash
-  curl -X GET  https://mlbb-api.vercel.app/heroes/Atlas
+  curl -X GET https://mlbb-api.vercel.app/heroes/Atlas
   ```
 ### /{id}
 - **Método:** GET
 - **Descrição:** Retorna o herói pelo id.
 - **Exemplo de uso:**
   ```bash
-  curl -X GET  https://mlbb-api.vercel.app/5
+  curl -X GET https://mlbb-api.vercel.app/5
   ```
 
 ### /roles/{role}
 - **Método:** GET
-- **Descrição:** Retorna os heróis pela função..
+- **Descrição:** Retorna os heróis pela função.
 - **Exemplo de uso:**
   ```bash
-  curl -X GET  https://mlbb-api.vercel.app/roles/Mage
+  curl -X GET https://mlbb-api.vercel.app/roles/Mage
   ```
 
 

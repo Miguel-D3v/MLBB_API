@@ -8,7 +8,7 @@ const app = express();
 app.use(cors());
 app.use(helmet());
 app.use(express.json());
-app.use("/api",routes);
+app.use(routes);
 app.use((error:any,req: express.Request,res: express.Response,next: express.NextFunction)=>{
     const statusCode = error.httpStatusCode || 500;
     const message = error.message || "Internal Server Error";
