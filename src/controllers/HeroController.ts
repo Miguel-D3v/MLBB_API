@@ -40,11 +40,11 @@ export class HeroController {
     }
 }
 
-   async getHeroById(req: Request, res: Response, next: NextFunction): Promise<void> {
+  async getHeroById(req: Request, res: Response, next: NextFunction): Promise<void> {
     try {
         const idParam = req.params.id;
         
-        if (!idParam || isNaN(parseInt(idParam, 10))) {
+        if (typeof idParam !== 'string' || !idParam || isNaN(parseInt(idParam, 10))) {
             res.status(400).json({ message: "Invalid hero ID. Must be a valid number" });
             return;
         }
@@ -71,6 +71,7 @@ export class HeroController {
         (error as any).httpStatusCode = 400;
         next(error);
     }
+  
 }
 
     async getHeroByName(req: Request, res: Response, next: NextFunction): Promise<void> {
