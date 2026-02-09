@@ -1,6 +1,6 @@
-import { HeroesRepository } from "../repositories/heroes_repositories";
+import { HeroesRepository } from "../repositories/HeroesRepo";
 import { HeroAttributes } from "../interfaces/IHero";
-import { off } from "node:cluster";
+
 
 
 export class HeroesService {

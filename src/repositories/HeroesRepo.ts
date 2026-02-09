@@ -1,4 +1,4 @@
-import { Hero } from "../models/modelHero";
+import { Hero } from "../models/ModelHero";
 import { HeroAttributes } from "../interfaces/IHero";
 
 export class HeroesRepository {
