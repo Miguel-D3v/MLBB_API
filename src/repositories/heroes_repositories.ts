@@ -3,7 +3,7 @@ import { HeroAttributes } from "../interfaces/IHero";
 
 export class HeroesRepository {
 
-    async findAll(): Promise<HeroAttributes[]> {
+    async findAllPaginated(offset: number,limit: number): Promise<HeroAttributes[]> {
         return await Hero.findAll();
     }
    
