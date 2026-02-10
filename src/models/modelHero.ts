@@ -8,7 +8,7 @@ export class Hero
 
   public hero_id!: number;
   public name!: string;
-  public roles!: string;
+  public role!: string;
   public specialties!: string;
   public lane!: string;
   public release_year!: number;
@@ -29,7 +29,7 @@ export class Hero
       allowNull: false,
     },
 
-    roles: {
+    role: {
       type: DataTypes.STRING,
       allowNull: false,
     },

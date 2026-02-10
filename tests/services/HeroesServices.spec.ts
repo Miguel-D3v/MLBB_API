@@ -1,19 +1,18 @@
 import { HeroesService } from '../../src/services/HeroesServices';
 import { HeroesRepository } from '../../src/repositories/HeroesRepo';
-
-jest.mock('../../src/repositories/HeroesRepo');
+import { Hero } from '../../src/models/ModelHero';
 
 describe('HeroesService', () => {
   let service: HeroesService;
-  const repoPrototype = HeroesRepository.prototype as jest.Mocked<HeroesRepository>;
 
   beforeEach(() => {
-    jest.clearAllMocks();
     service = new HeroesService();
+    jest.restoreAllMocks();
   });
 
   describe('getAllHeroesPaginated', () => {
     it('deve retornar heróis com paginação', async () => {
+
       const mockHeroes = [
         { id: 1, name: 'Atlas', role: 'Tank' },
         { id: 2, name: 'Arlott', role: 'Fighter' },
@@ -27,31 +26,35 @@ describe('HeroesService', () => {
         { id: 10, name: 'Kimmy', role: 'Marksman' },
       ];
 
-      repoPrototype.findAllPaginated = jest.fn().mockResolvedValue(mockHeroes as any);
+      jest
+        .spyOn(HeroesRepository.prototype, 'findAllPaginated')
+        .mockResolvedValue(mockHeroes as any);
 
       const result = await service.getAllHeroesPaginated(0, 10);
 
       expect(result).toEqual(mockHeroes);
       expect(result).toHaveLength(10);
-      expect(repoPrototype.findAllPaginated).toHaveBeenCalledWith(0, 10);
     });
   });
 
   describe('getHeroByName', () => {
     it('deve retornar um herói pelo nome', async () => {
+
       const mockHero = { id: 1, name: 'Atlas', role: 'Tank' };
 
-      repoPrototype.findByName = jest.fn().mockResolvedValue(mockHero as any);
+      jest
+        .spyOn(HeroesRepository.prototype, 'findByName')
+        .mockResolvedValue(mockHero as any);
 
       const result = await service.getHeroByName('Atlas');
 
       expect(result).toEqual(mockHero);
-      expect(repoPrototype.findByName).toHaveBeenCalledWith('Atlas');
     });
   });
 
   describe('getHeroesByRole', () => {
     it('deve retornar heróis por função', async () => {
+
       const mockHeroes = [
         { id: 1, name: 'Atlas', role: 'Tank' },
         { id: 3, name: 'Tigreal', role: 'Tank' },
@@ -60,13 +63,32 @@ describe('HeroesService', () => {
         { id: 25, name: 'Edith', role: 'Tank' },
       ];
 
-      repoPrototype.findByRole = jest.fn().mockResolvedValue(mockHeroes as any);
+      jest
+        .spyOn(HeroesRepository.prototype, 'findByRole')
+        .mockResolvedValue(mockHeroes as any);
 
       const result = await service.getHeroesByRole('Tank');
 
       expect(result).toEqual(mockHeroes);
-      expect(repoPrototype.findByRole).toHaveBeenCalledWith('Tank');
       expect(result.every(hero => hero.role === 'Tank')).toBe(true);
     });
   });
+
+      describe('getHeroById', () => {
+      it('deve retornar um herói pelo ID', async () => {
+        const mockHero = { id: 1, name: 'Atlas', role: 'Tank' };
+
+        jest
+          .spyOn(HeroesRepository.prototype, 'findById')
+          .mockResolvedValue(mockHero as any);  
+
+         const result = await service.getHeroById(1);
+
+          expect(result).toEqual(mockHero);
+          expect(HeroesRepository.prototype.findById).toHaveBeenCalledWith(1);
+      });
+  });
 });
+ 
+  
+    

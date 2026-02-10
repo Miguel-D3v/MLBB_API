@@ -1,7 +1,7 @@
 export interface HeroAttributes{
   hero_id: number;
   name: string;
-  roles: string;
+  role: string;
   specialties: string;
   lane: string;
   release_year: number;

@@ -10,7 +10,7 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
 
-    "types": ["node"],
+    "types": ["jest","node"],
 
     "strict": true,
     "skipLibCheck": true,
@@ -19,6 +19,6 @@
     "sourceMap": true
   },
 
-  "include": ["src", "server.ts"],
+  "include": ["src","tests", "server.ts"],
   "exclude": ["node_modules", "dist"]
 }
