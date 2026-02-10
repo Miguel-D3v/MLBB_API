@@ -7,6 +7,8 @@
 - Express
 - Sequelize
 - PostegreSQL
+- Typescript
+- Jest
 
 # Visão Geral
 
