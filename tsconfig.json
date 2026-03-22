@@ -19,6 +19,6 @@
     "sourceMap": true
   },
 
-  "include": ["src","tests", "server.ts"],
+  "include": ["src","tests", "server.ts", "api.ts"],
   "exclude": ["node_modules", "dist"]
 }
