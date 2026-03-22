@@ -18,7 +18,15 @@ Nela haverá informações sobre os heróis do game e seus avatares .
 
 # Endpoints
 
-API → https://mlbb-api.vercel.app/
+**Base URL:** `https://mlbb-api.vercel.app`
+
+### /
+- **Método:** GET
+- **Descrição:** Retorna mensagem de boas-vindas da API.
+- **Exemplo de uso:**
+  ```bash
+  curl -X GET https://mlbb-api.vercel.app/
+  ```
 
 ### /heroes
 - **Método:** GET
